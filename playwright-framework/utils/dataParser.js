@@ -12,7 +12,7 @@ const dataDir = path.join(__dirname, '..', 'test-data');
 export class DataParser {
   /**
    * Read JSON test data.
-   * @param {string} filename - relative to /test-data
+   * @param {string} filename // relative to /test-data
    */
   static readJSON(filename) {
     const filepath = path.join(dataDir, filename);
@@ -29,7 +29,7 @@ export class DataParser {
 
   /**
    * Read XML test data and parse to JS object.
-   * @param {string} filename - relative to /test-data
+   * @param {string} filename // relative to /test-data
    */
   static readXML(filename) {
     const filepath = path.join(dataDir, filename);
@@ -49,8 +49,8 @@ export class DataParser {
   }
 
   /**
-   * Get a specific user object from users.json by key.
-   * @param {string} userType - e.g. 'standard', 'lockedOut'
+   * Get a specific user from users.json.
+   * @param {string} userType  // eg 'standard', 'lockedOut'
    */
   static getUser(userType) {
     const users = this.readJSON('users.json');

@@ -59,14 +59,6 @@
 └────────────────────────────────────────────────────────────────┘
 ```
 
-## Design Principles
-
-1. **Separation of concerns** — Tests describe *what* to verify; page objects describe *how*; utilities provide *infrastructure*.
-2. **DRY** — Reusable methods in `BasePage` and `utils/` prevent duplication.
-3. **Configurable** — Environment-specific values live in `config/` and `.env`, not in code.
-4. **Data-driven** — Test inputs live in `test-data/`, so adding scenarios doesn't require code changes.
-5. **Observable** — Logging, screenshots, and Allure reports make failures easy to diagnose.
-
 ## Data Flow for a Test
 
 1. Playwright's runner picks up `tests/*.spec.js`.
@@ -77,13 +69,4 @@
 6. `afterEach` hook fires → if failure, capture screenshot via `ScreenshotUtil` and attach to Allure.
 7. Allure reporter writes results to `allure-results/` → CLI generates `allure-report/`.
 
-## Why this design
 
-| Decision | Reason |
-|----------|--------|
-| ES Modules (`import/export`) | Modern, matches Playwright examples |
-| Custom fixture over manual `new LoginPage(page)` | Less boilerplate; fixtures handle lifecycle |
-| Winston logger | Multi-transport (console + file), industry standard |
-| Allure over default reporter | Required by rubric; richer than built-in HTML |
-| JSON + XML data sources | Project rubric requires both options demonstrated |
-| `fast-xml-parser` | Lightweight, no native deps |

@@ -1,6 +1,6 @@
 # Playwright Automation Framework
 
-A robust, maintainable test automation framework built with **Playwright + JavaScript** following industry best practices. Targets the [SauceDemo](https://www.saucedemo.com/) e-commerce demo application.
+A test automation framework built with **Playwright + JavaScript** following industry best practices. Targets the [SauceDemo](https://www.saucedemo.com/) e-commerce demo application.
 
 ## Features
 
@@ -9,7 +9,7 @@ A robust, maintainable test automation framework built with **Playwright + JavaS
 - **Allure Reporting** — rich HTML reports with screenshots and logs
 - **Custom Hooks** — automatic screenshot on failure, structured logging
 - **Utilities Layer** — config reader, logger, data parser, wait utils, screenshot util
-- **Multi-browser support** — Chromium, Firefox, WebKit
+- **Multi-browser support** — Chromium, Edge.
 - **Custom Fixtures** — page objects injected automatically into tests
 
 ## Prerequisites
@@ -54,6 +54,9 @@ npm run test:headed
 # chrome only
 npm run test:chrome
 
+# edge only
+npm run test:edge
+
 # only smoke tests
 npm run test:smoke
 
@@ -83,7 +86,7 @@ npm run report
 npm run report:generate
 ```
 
-> The Allure command line is bundled via `allure-commandline` npm package. If you prefer the global install, run: `npm install -g allure-commandline` and use `allure generate` and then `allure open allure-report`.
+> The Allure command line is bundled via `allure-commandline` npm package. If you prefer the global install, run: `npm install -g allure-commandline` and use `allure generate allure-results --clean` , remove --clean part when there is no folder named "allure-report" and "allure-results"  and then `allure open allure-report`.
 
 ## Folder Structure
 

@@ -2,10 +2,9 @@ import { logger } from '../utils/logger.js';
 import { WaitUtils } from '../utils/waitUtils.js';
 import { ScreenshotUtil } from '../utils/screenshotUtil.js';
 
-/**
- * BasePage - parent class for all Page Objects.
- * Houses common methods so individual pages stay focused on their unique elements.
- */
+
+// BasePage - parent class for all Page Objects.
+
 export class BasePage {
   /**
    * @param {import('@playwright/test').Page} page
@@ -59,9 +58,9 @@ export class BasePage {
   }
 
   /**
-   * Handle native browser alerts/dialogs.
+   *  // Handle browser alerts
    * @param {'accept'|'dismiss'} action
-   * @param {string} [promptText] - text to enter for prompt dialogs
+   * @param {string} [promptText] 
    */
   async handleAlert(action = 'accept', promptText = '') {
     this.page.once('dialog', async (dialog) => {

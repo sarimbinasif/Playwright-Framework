@@ -11,16 +11,15 @@ export class WaitUtils {
     await locator.waitFor({ state: 'visible', timeout });
   }
 
-  /**
-   * Wait for a locator to be hidden.
-   */
+
+   // Wait for a locator to be hidden.  
   static async waitForHidden(locator, timeout = 10000) {
     logger.info(`Waiting for element to be hidden (timeout: ${timeout}ms)`);
     await locator.waitFor({ state: 'hidden', timeout });
   }
 
   /**
-   * Wait until the page reaches a load state.
+   * // Wait until the page reaches a load state.
    * @param {import('@playwright/test').Page} page
    * @param {'load'|'domcontentloaded'|'networkidle'} state
    */
@@ -29,9 +28,9 @@ export class WaitUtils {
     await page.waitForLoadState(state);
   }
 
-  /**
-   * A static, predictable pause. Use sparingly — prefer explicit waits.
-   */
+  
+   // A static, predictable pause. Use sparingly — prefer explicit waits.
+   
   static async sleep(ms) {
     logger.warn(`Static sleep used: ${ms}ms (avoid in production tests)`);
     return new Promise((resolve) => setTimeout(resolve, ms));

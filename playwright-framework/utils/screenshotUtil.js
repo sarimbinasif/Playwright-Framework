@@ -1,4 +1,3 @@
-// utils/screenshotUtil.js
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -18,10 +17,10 @@ export class ScreenshotUtil {
   }
 
   /**
-   * Capture a screenshot of the current page.
+   * screenshot of the current page
    * @param {import('@playwright/test').Page} page
-   * @param {string} name - base name (no extension)
-   * @returns {Promise<string>} absolute path
+   * @param {string} name 
+   * @returns {Promise<string>}  // absolute path
    */
   static async capture(page, name) {
     this.ensureDirExists();
@@ -35,7 +34,7 @@ export class ScreenshotUtil {
   }
 
   /**
-   * Capture screenshot specifically when a test fails.
+   * screenshot when a test fails.
    * @param {import('@playwright/test').Page} page
    * @param {string} testName
    */
@@ -45,9 +44,9 @@ export class ScreenshotUtil {
   }
 
   /**
-   * Attach a screenshot to the Allure report by name.
+   * Attach screenshot to Allure report by name.
    * @param {import('@playwright/test').Page} page
-   * @param {string} name - attachment label shown in Allure
+   * @param {string} name // attachment label shown in Allure
    */
   static async attachToAllure(page, name) {
     const screenshotBuffer = await page.screenshot({ fullPage: true });
@@ -56,9 +55,9 @@ export class ScreenshotUtil {
   }
 
   /**
-   * Capture + save to disk + attach to Allure report.
+   *attach to Allure report.
    * @param {import('@playwright/test').Page} page
-   * @param {string} name - base name (no extension)
+   * @param {string} name // base name 
    */
   static async captureAndAttach(page, name) {
     const filepath = await this.capture(page, name);
