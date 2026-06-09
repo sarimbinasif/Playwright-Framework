@@ -1,0 +1,10 @@
+{
+  "baseURL": "https://www.saucedemo.com",
+  "headless": true,
+  "actionTimeout": 10000,
+  "navigationTimeout": 30000,
+  "defaultTimeout": 15000,
+  "environment": "qa",
+  "browser": "chromium",
+  "retries": 1
+}

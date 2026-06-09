@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product>
+    <name>Sauce Labs Backpack</name>
+    <price>29.99</price>
+  </product>
+  <product>
+    <name>Sauce Labs Bike Light</name>
+    <price>9.99</price>
+  </product>
+  <product>
+    <name>Sauce Labs Bolt T-Shirt</name>
+    <price>15.99</price>
+  </product>
+  <product>
+    <name>Sauce Labs Fleece Jacket</name>
+    <price>49.99</price>
+  </product>
+</products>
