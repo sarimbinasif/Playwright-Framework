@@ -1,4 +1,3 @@
-// pages/BasePage.js
 import { logger } from '../utils/logger.js';
 import { WaitUtils } from '../utils/waitUtils.js';
 import { ScreenshotUtil } from '../utils/screenshotUtil.js';

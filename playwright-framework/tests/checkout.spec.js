@@ -1,4 +1,3 @@
-// tests/checkout.spec.js
 import { test, expect } from '../fixtures/baseFixture.js';
 import { allure } from 'allure-playwright';
 import { DataParser } from '../utils/dataParser.js';

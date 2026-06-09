@@ -1,4 +1,3 @@
-// fixtures/baseFixture.js
 import { test as base, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage.js';
 import { InventoryPage } from '../pages/InventoryPage.js';

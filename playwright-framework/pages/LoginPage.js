@@ -1,4 +1,3 @@
-// pages/LoginPage.js
 import { BasePage } from './BasePage.js';
 import { logger } from '../utils/logger.js';
 

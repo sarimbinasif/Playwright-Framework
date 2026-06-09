@@ -45,19 +45,19 @@ cp .env.example .env
 ## Running Tests
 
 ```bash
-# Run all tests, all browsers
+#all tests, all browsers
 npm test
 
 # Run with browser visible
 npm run test:headed
 
-# Run only on Chromium
+# chrome only
 npm run test:chrome
 
-# Run only smoke tests
+# only smoke tests
 npm run test:smoke
 
-# Run only regression tests
+# only regression tests
 npm run test:regression
 
 # Run a single spec file
@@ -160,5 +160,5 @@ Spec-level `test.describe.beforeEach` hooks handle test-specific setup (e.g., lo
 
 ## Authors
 
-- Your Name (roll number)
-- Partner Name (roll number)
+- Sarim Asif (22k-4259)
+- Kashan Alam (22k-4164)

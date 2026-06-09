@@ -1,4 +1,3 @@
-// utils/waitUtils.js
 import { logger } from './logger.js';
 
 export class WaitUtils {
