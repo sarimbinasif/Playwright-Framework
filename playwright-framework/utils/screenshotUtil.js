@@ -1,6 +1,8 @@
+// utils/screenshotUtil.js
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { allure } from 'allure-playwright';
 import { logger } from './logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -40,5 +42,29 @@ export class ScreenshotUtil {
   static async captureOnFailure(page, testName) {
     const safeName = testName.replace(/[^a-zA-Z0-9]/g, '_');
     return this.capture(page, `FAILED_${safeName}`);
+  }
+
+  /**
+   * Attach a screenshot to the Allure report by name.
+   * @param {import('@playwright/test').Page} page
+   * @param {string} name - attachment label shown in Allure
+   */
+  static async attachToAllure(page, name) {
+    const screenshotBuffer = await page.screenshot({ fullPage: true });
+    await allure.attachment(name, screenshotBuffer, { contentType: 'image/png' });
+    logger.info(`Screenshot attached to Allure: ${name}`);
+  }
+
+  /**
+   * Capture + save to disk + attach to Allure report.
+   * @param {import('@playwright/test').Page} page
+   * @param {string} name - base name (no extension)
+   */
+  static async captureAndAttach(page, name) {
+    const filepath = await this.capture(page, name);
+    const buffer = fs.readFileSync(filepath);
+    await allure.attachment(name, buffer, { contentType: 'image/png' });
+    logger.info(`Screenshot attached to Allure: ${name}`);
+    return filepath;
   }
 }
